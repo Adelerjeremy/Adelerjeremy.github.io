@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>Le jeu du pendu</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel='stylesheet' href='css/style.css'/>
+        <script src="js/mots.js"></script>
+
+    </head>
+
+<body onkeydown="clavier(event)">
+
+        <nav class="navbar navbar-expand-lg navbar-dark ">
+                <a class="navbar-brand" href="#">LePendouloo</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+
+<header class="container">
+    			
+        <div class="row ">
+            <div class="col-12 offset-md-3 col-lg-12 offset-xl-4 titre_centre" id="titre">  
+                <h3>BIENVENUE AU JEU DU PENDU</h3> 
+            </div>			
+        </div>	
+</header>
+	
+	<section class="container">	
+        <div class="row block_top">
+
+            <div class="col-12 text-center block_head_top" id="colonne_gauche">
+                <div class="astuce" id="indication">
+                    <p>Indication : <br/><strong></strong></p>
+                    <p>Indice pour le mot à trouver</p> 
+                </div>
+            </div>
+           
+
+            <div class="col-12 text-center block_head_center" id="colonne_droite">
+                <img src="img/pendu_defaut.png" alt="" id="lePendu"/>
+            </div>
+
+            <div class="col-12 text-center block_head_bottom">
+                <div class="astuce" id="leMot" >
+                    <h4>Mot à trouver</h4> 
+                </div>
+                <div class="astuce" id="leScore">
+                    <p>Votre score :<strong>10 / 10</strong> - Mots restants : <strong>10</strong></p> 
+                </div>
+                    <input class="btn " type="button" value="PLAY" onClick="debuter()"/>
+            </div>
+
+        </div> <!----ROW-->
+
+
+    
+				<div class="centre pl-3 pl-md-0" id="le_clavier">
+                    <div id="apercu">
+					<div class="row">
+                        <div class="col-1" id="calque_a">
+                            <div class="lettre" ><p>A</p></div>
+                        </div>
+                        <div class="col-1" id="calque_b">
+                            <div class="lettre" ><p>B</p></div>
+                        </div>
+                        <div class="col-1" id="calque_c">
+                            <div class="lettre" ><p>C</p></div>
+                        </div>
+                        <div class="col-1" id="calque_d">
+                            <div class="lettre" ><p>D</p></div>
+                        </div>
+                        <div class="col-1" id="calque_e">
+                            <div class="lettre" ><p>E</p></div>
+                        </div>
+                        <div class="col-1" id="calque_f">
+                            <div class="lettre" ><p>F</p></div>
+                        </div>
+                        <div class="col-1" id="calque_g">
+                            <div class="lettre" ><p>G</p></div>
+                        </div>
+                        <div class="col-1"  id="calque_h">
+                            <div class="lettre" ><p>H</p></div>
+                        </div>
+                        <div class="col-1" id="calque_i">
+                            <div class="lettre" ><p>I</p></div>
+                        </div>
+                        <div class="col-1" id="calque_j">
+                            <div class="lettre" ><p>J</p></div>
+                        </div>
+                        <div class="col-1" id="calque_k">
+                            <div class="lettre" ><p>K</p></div>
+                        </div>
+                        <div class="col-1" id="calque_l">
+                            <div class="lettre" ><p>L</p></div>
+                        </div>
+             
+ 
+                    </div>
+
+                    <div class="row">
+                        <div class="col-1"  id="calque_m">
+                            <div class="lettre"><p>M</p></div>
+                        </div>
+                        <div class="col-1" id="calque_n">
+                        <div class="lettre" ><p>N</p></div>
+                        </div>
+                        <div class="col-1" id="calque_o">
+                        <div class="lettre" ><p>O</p></div>
+                        </div>
+                        <div class="col-1" id="calque_p">
+                        <div class="lettre"><p>P</p></div>
+                        </div>
+                        <div class="col-1" id="calque_q">
+                        <div class="lettre" ><p>Q</p></div>
+                        </div>
+                        <div class="col-1" id="calque_r">
+                        <div class="lettre" ><p>R</p></div>
+                        </div>
+                        <div class="col-1" id="calque_s">
+                        <div class="lettre" ><p>S</p></div>
+                        </div>
+                        <div class="col-1" id="calque_t">
+                        <div class="lettre" ><p>T</p></div>
+                        </div>
+                        <div class="col-1" id="calque_u">
+                        <div class="lettre" ><p>U</p></div>
+                        </div>
+                        <div class="col-1" id="calque_v">
+                        <div class="lettre" ><p>V</p></div>
+                        </div>
+                        <div class="col-1" id="calque_w">
+                        <div class="lettre" ><p>W</p></div>
+                        </div>
+                        <div class="col-1" id="calque_x">
+                        <div class="lettre" ><p>X</p></div>
+                        </div>
+                    </div>
+             
+     
+                
+                
+                    <div class="row">
+                         <div class="col-1"  id="calque_y">
+                            <div class="lettre"><p>Y</p></div>
+                        </div>
+                        <div class="col-1" id="calque_z">
+                            <div class="lettre" ><p>Z</p></div>
+                        </div>
+                        <div class="col-1" id="calque_0">
+                            <div class="lettre" ><p>0</p></div>
+                        </div>
+                        <div class="col-1" id="calque_1">
+                            <div class="lettre" ><p>1</p></div>
+                        </div>
+                        <div class="col-1" id="calque_2">
+                            <div class="lettre" ><p>2</p></div>
+                        </div>
+                        <div class="col-1" id="calque_3">
+                            <div class="lettre" ><p>3</p></div>
+                        </div>
+                        <div class="col-1" id="calque_4">
+                            <div class="lettre" ><p>4</p></div>
+                        </div>
+                        <div class="col-1" id="calque_5">
+                            <div class="lettre" ><p>5</p></div>
+                        </div>
+                        <div class="col-1" id="calque_6">
+                            <div class="lettre" ><p>6</p></div>
+                        </div>
+                        <div class="col-1"  id="calque_7">
+                            <div class="lettre"><p>7</p></div>
+                        </div>
+                        <div class="col-1"  id="calque_8">
+                            <div class="lettre" ><p>8</p></div>
+                        </div>
+                        <div class="col-1" id="calque_9">
+                            <div class="lettre" ><p>9</p></div>
+                        </div>
+                    </div>
+                </div>		
+            </div> 	
+       			
+		
+			
+    </section>	
+</body>
+
+    <script type="text/javascript" language="javascript">
+    var end = true;
+    var nb_errors = 0; // nombre de fautes commises par tour
+    var nb_turn = 0; // compte le nombre de mots déjà joués
+    var tab_words;
+    var nb_words = 0;
+    var block_chain = ""; // mémorise l'ensemble des nombres aléatoires déjà proposés
+    var the_word = ""; 
+    var help = "";
+    var mem_word = "";
+    var score = 10; // find 10 mots pour gagné la partie!
+    var lettres_ok ="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"; // lettre autoriser
+    var the_key ="";
+
+    recuperer();
+
+    function recuperer(){
+
+        tab_words = mots_a_trouver().split('*'); // vas chercher la fonction dans mots.js la chaine de caractère mot + indication les divise a partir du symbole " * ".
+        nb_words = tab_words.length; // Stock la longueur du mot random
+        // alert(nb_words);
+        // alert(tab_words[0]); // affiche 1 fois les indication du mot a trouver
+       
+
+    }
+
+    function debuter(){ //  Permet de démarrer une nouvelle partie en réinitialisant toutes les variables de décompte
+
+        if(the_key==" ")
+            return;
+
+        end = false;
+    
+        block_chain='';
+        nb_turn = 0; 
+        nb_errors = 0;
+        the_score = 10; 
+
+    suivant();  
+
+    }
+
+
+    function init_calques(){
+        var parent = document.getElementById('apercu');
+        var enfants = parent.getElementsByTagName('div');
+
+        for (var i = 0; i < enfants.length; i++) {
+            if(enfants[i].id != 'saut1' && enfants[i].id != 'saut2'){
+                enfants[i].style.backgroundColor = '#303030';
+            }
+
+          
+
+        }
+
+    }
+
+    function suivant(){ // traite et encode les chaînes de caractères.
+
+        var tab_enigme;
+        var nb_alea = Math.floor(Math.random() * nb_words);
+        // alert(nb_alea);
+
+        the_score = the_score-nb_errors/4; // le joueurs n'a que 4 chance par mot
+       
+        document.getElementById('leScore').innerHTML= "Votre score :<strong>"+ the_score +"/ 10 </strong> - Mots restants:<strong>" + (10 - nb_turn) + "</strong>"
+        document.getElementById('lePendu').src= "img/pendu_defaut.png";
+        nb_errors=0;
+        init_calques(); // sert a ne annulé les key séléctionné de la partie précédente
+
+        while(block_chain.indexOf('-'+ nb_alea +'-') > -1){ // détermine le nombre de tiret utilisé en fonction de la longueur du mot
+
+            nb_alea = Math.floor(Math.random() * nb_words);
+        }
+
+        block_chain += "-" + nb_alea + "-";       
+        tab_enigme= tab_words[nb_alea].split(':'); // Sépare et Stock help et le mot mystère du return de mots.js       
+        the_word = tab_enigme[0]; // récupère le mot mystère 
+        help= tab_enigme[1]; // récupère l'indication 
+        mem_word = the_word.toUpperCase(); 
+        the_word = the_word.toUpperCase().replace(/[A-Z0-9]/g,"_"); // encode le mot mystère avec les '_' a la place de lettre.
+        
+        document.getElementById('indication').innerHTML = 'Indication :<br/><strong>'+ help +'</strong>';
+        document.getElementById('leMot').innerHTML = the_word;
+
+    }
+   
+    function clavier(evenement){ // permet de réceptionner la key enfoncée et d'interpréter la lettre correspondante.
+        
+        var indice=0; 
+        var the_letter =''; // Compare à la lettre tapez
+        var find = false; // Pour chaque lettre TROUVE renvoie false par defaut/ en cas d'erreur incrementera le compteur d'erreur
+        
+        if(end==true)
+            return;
+        
+        var key = window.event ? evenement.keyCode : evenement.wich; // KeyCode retourn la valeur numérique de la key.
+        key = String.fromCharCode(key).substr(0,1); // converti le numéro de la key  TAPER en caractère
+        // alert(key); // renvoie la key Taper, en string
+
+        if(key==" ") { // Compare la valeur de key avec la valeur entre guillement (lettre du mot mystère)
+
+            the_key = " ";
+            return;
+
+        } else {
+
+            the_key = " ";
+            
+            if(lettres_ok.indexOf(key)==-1) { // Verifie si la lettre est autorisé (si elle ne l'est pas arrête le code)
+
+                return;
+            }
+
+        }
+
+        document.getElementById('calque_'+ key.toLowerCase()).style.backgroundColor='#831010'; // Change La couleur de la key après l'avoir Tapez.
+
+        for(indice=0;indice<= mem_word.length-1;indice++){
+            the_letter = mem_word.substr(indice,1);
+
+            if(the_letter==key){ // Si ce critère est vérifié, la proposition est un succès
+
+                find = true; 
+                the_word = the_word.substr(0,indice) + the_letter + the_word.substr(indice +1); // la lettre Tapez et validé vas être implémenté. Part1: partie avant le placement de la lettre Part2: le reste.
+            
+                document.getElementById('leMot').innerHTML = the_word;
+            }
+        }
+
+        if(find == true) {
+            if(the_word == mem_word) {
+                nb_turn++;
+                if(nb_turn == 10) {
+                    document.getElementById('leScore').innerHTML = "Votre score :<strong>"+ (the_score-nb_errors/4) +" / 10 </strong> - Mots restants:<strong>" + (10 - nb_turn) + "</strong> - <strong>You Win !</strong>" 
+                    end = true;
+                    document.getElementById('leMot').innerHTML = "Tu as gagné!!";
+                } else {
+                    window.setTimeout(function attendre(){
+                        suivant();
+                    }, 1000);
+                }
+            } // end IF 2
+
+        } else {
+            nb_errors++;
+            document.getElementById('lePendu').src = 'img/pendu' + nb_errors + '.png';
+            if(nb_errors==4) {
+                nb_turn++;
+                document.getElementById('leMot').innerHTML = "Aaaargh...";
+
+            if(nb_turn==10)
+                end = true
+
+                window.setTimeout(function attendre(){ 
+                    suivant();
+                }, 1000);
+            }
+
+        }
+    }	
+
+</script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
+	
