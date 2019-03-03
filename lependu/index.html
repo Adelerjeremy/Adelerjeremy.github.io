@@ -37,7 +37,7 @@
 <header class="container">
     			
         <div class="row ">
-            <div class="col-12 offset-md-3 col-lg-12 offset-xl-4 titre_centre" id="titre">  
+            <div class="col-12 titre_centre" id="titre">  
                 <h3>BIENVENUE AU JEU DU PENDU</h3> 
             </div>			
         </div>	
@@ -46,26 +46,30 @@
 	<section class="container">	
         <div class="row block_top">
 
-            <div class="col-12 text-center block_head_top" id="colonne_gauche">
+            <div class="col-4 col-md-6 text-center block_head_top" id="colonne_gauche">
                 <div class="astuce" id="indication">
                     <p>Indication : <br/><strong></strong></p>
                     <p>Indice pour le mot à trouver</p> 
                 </div>
             </div>
-           
-
-            <div class="col-12 text-center block_head_center" id="colonne_droite">
+            
+            <div class="col-4  text-center block_head_center" id="colonne_droite">
                 <img src="img/pendu_defaut.png" alt="" id="lePendu"/>
             </div>
 
-            <div class="col-12 text-center block_head_bottom">
+            <div class="col-4  col-md-6  text-center block_head_bottom">
                 <div class="astuce" id="leMot" >
                     <h4>Mot à trouver</h4> 
                 </div>
                 <div class="astuce" id="leScore">
                     <p>Votre score :<strong>10 / 10</strong> - Mots restants : <strong>10</strong></p> 
-                </div>
-                    <input class="btn " type="button" value="PLAY" onClick="debuter()"/>
+                </div>                  
+            </div>
+              
+
+
+            <div class="col-12 text-center block_button">
+                <input class="btn " type="button" value="PLAY" onClick="debuter()"/>
             </div>
 
         </div> <!----ROW-->
